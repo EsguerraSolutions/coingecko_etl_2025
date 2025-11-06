@@ -19,3 +19,5 @@ data/
 *.crc
 spark-warehouse/
 metastore_db/
+
+test.ipynb
