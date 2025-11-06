@@ -1,0 +1,21 @@
+# Bytecode caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.env/
+
+# Data (ignore generated data, but keep small samples)
+data/
+!data/sample/
+
+# Jupyter autosaves
+.ipynb_checkpoints/
+
+# Spark / temp / logs
+*.log
+*.tmp
+*.crc
+spark-warehouse/
+metastore_db/
