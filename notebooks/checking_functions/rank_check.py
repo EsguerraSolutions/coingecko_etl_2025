@@ -12,6 +12,4 @@ def rank_check(df, column, rank_column):
         "id", column, rank_column, "expected_rank"
     )
 
-    invalid_rank_df.show()
-
-    return invalid_rank_df
+    return invalid_rank_df.show()
