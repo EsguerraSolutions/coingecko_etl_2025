@@ -15,9 +15,9 @@ def rank_clean_with_flag(df, column_name, rank_column_name):
     
     else:
 
-        df_rank_cleaned = df_rank_cleaned.withColumn(
+        df_rank_cleaned = df_with_expected_rank.withColumn(
             f"{rank_column_name}_mismatch_flag",
-            F.col(expected_rank_column_name) != F.col(rank_column_name)
-        )
+                F.col(expected_rank_column_name) != F.col(rank_column_name)
+            )  
 
-    return df_rank_cleaned
+        return df_rank_cleaned
