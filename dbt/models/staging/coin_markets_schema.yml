@@ -1,0 +1,126 @@
+version: 2
+
+models:
+  - name: staging_coin_markets
+    description: "Cleaned silver data from BigQuery cloud warehouse that is pulled into a dbt model"
+    columns:
+      - name: id
+        description: "Unique identifier for the coin"
+        tests:
+          - unique
+          - not_null
+      - name: symbol
+        description: "Symbol of the coin."
+        tests:
+          - not_null
+      - name: name
+        description: "Complete name of the coin in Title Case"
+        tests:
+          - not_null
+      - name: image
+        description: "Respective image of the coin in URL format"
+        tests:
+          - not_null
+      - name: current_price
+        description: "The current price of the coin"
+        tests:
+          - not_null
+      - name: market_cap
+        description: "The market cap of the coin"
+        tests:
+          - not_null
+      - name: market_cap_rank
+        description: "The ranking of the coin based on the market cap with the highest at number 1"
+        tests:
+          - not_null
+      - name: fully_diluted_valuation
+        description: "The fully diluted valuation of the coin"
+        tests:
+          - not_null
+      - name: total_volume
+        description: "The total volume of the coin"
+        tests:
+          - not_null
+      - name: high_24h
+        description: "The highest price of the coin with 24 hours"
+        tests:
+          - not_null
+      - name: low_24h
+        description: "The lowest price of the coin with 24 hours"
+        tests:
+          - not_null
+      - name: price_change_24h
+        description: "The difference of the price of the coin from current to previous"
+        tests:
+          - not_null
+      - name: price_change_percentage_24h
+        description: "Price change divided by previous price time 100"
+        tests:
+          - not_null
+      - name: market_cap_change_24h
+        description: "The difference of the market cap of the coin from current to previous"
+        tests:
+          - not_null
+      - name: market_cap_change_percentage_24h
+        description: "Market cap change divided by previous market cap time 100"
+        tests:
+          - not_null
+      - name: circulating_supply
+        description: "The circulating supply of the coin"
+        tests:
+          - not_null
+      - name: total_supply
+        description: "The total supply of the coin"
+        tests:
+          - not_null
+      - name: max_supply
+        description: "The max supply of the coin"
+        tests:
+          - not_null
+      - name: all_time_high_price
+        description: "All time high price of the coin"
+        tests:
+          - not_null
+      - name: ath_change_percentage
+        description: "All time high change percentage of the coin."
+        tests:
+          - not_null
+      - name: all_time_high_date
+        description: "The date that the coin reach its all time high price"
+        tests:
+          - not_null
+          - is_timestamp
+      - name: all_time_low_price
+        description: "All time low price of the coin"
+        tests:
+          - not_null
+      - name: atl_change_percentage
+        description: "All time low change percentage of the coin."
+        tests:
+          - not_null
+      - name: all_time_low_date
+        description: "The date that the coin reach its all low high price"
+        tests:
+          - not_null
+          - is_timestamp
+      - name: roi
+        description: "the currency, percentage and times of the coin"
+        tests:
+          - not_null
+      - name: last_updated
+        description: "The date wherein the coin data is last updated from the source API"
+        tests:
+          - not_null
+          - is_timestamp
+      - name: ingestion_date
+        description: "The date wherein the coin is loaded into the pipeline"
+        tests:
+          - not_null
+          - is_timestamp
+      - name: cleaning_date
+        description: "TThe date wherein the coin is cleaned or processed into the pipeline"
+        tests:
+          - not_null
+          - is_timestamp
+    config:
+      materialized: table

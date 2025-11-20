@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: silver
+    description: "Cleaned silver data from BigQuery cloud warehouse"
+    dataset: silver
+    tables:
+      - name: silver_coin_markets
+        columns:
+          - name: id
+            tests:
+              - not_null
+              - unique
+          - name: symbol
+            tests:
+              - not_null

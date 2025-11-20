@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_roi
+    description: "Dimension table containing information on the return on investment of the coin"
+    columns:
+      - name: currency
+        description: "Currency of the return on investment of coin"
+        tests:
+          - not_null
+      - name: percentage
+        description: "Percentage of the return on investment of coin"
+        tests:
+          - not_null
+      - name: times
+        description: "Times of the return on investment of coin"
+        tests:
+          - not_null
+    config:
+      materialized: table
