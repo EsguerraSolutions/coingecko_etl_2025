@@ -103,15 +103,18 @@ models:
         tests:
           - not_null
           - is_timestamp
-      - name: roi
-        description: "the currency, percentage and times of the coin"
+      - name: roi_currency
+        description: "the return on investment currency of the coin"
         tests:
           - not_null
-      - name: last_updated
-        description: "The date wherein the coin data is last updated from the source API"
+      - name: roi_percentage
+        description: "the return on investment percentage of the coin"
         tests:
           - not_null
-          - is_timestamp
+      - name: roi_times
+        description: "the return on investment times of the coin"
+        tests:
+          - not_null
       - name: ingestion_date
         description: "The date wherein the coin is loaded into the pipeline"
         tests:
@@ -119,6 +122,11 @@ models:
           - is_timestamp
       - name: cleaning_date
         description: "TThe date wherein the coin is cleaned or processed into the pipeline"
+        tests:
+          - not_null
+          - is_timestamp
+      - name: last_updated
+        description: "The date wherein the coin data is last updated from the source API"
         tests:
           - not_null
           - is_timestamp
