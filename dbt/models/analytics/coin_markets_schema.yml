@@ -1,18 +1,25 @@
 version: 2
 
 models:
-  - name: fact_coin_markets
-    description: "Cleaned silver data from BigQuery cloud warehouse that is pulled into a dbt model"
+  - name: coin_markets_features
+    description: "Warehouse analytics layer table with derived columns that provides additional features for coin market data"
     columns:
-      - name: coin_key
-        description: "Surrogate key for dim_coin"
+      - name: coin_id
+        description: "The unique identifier of the coin which is a string"
         tests:
           - unique
           - not_null
-      - name: coin_id
-        description: "Unique identifier for the coin"
+      - name: symbol
+        description: "The symbol of the coin used among platforms"
         tests:
-          - unique
+          - not_null
+      - name: name
+        description: "Full name of the coin"
+        tests:
+          - not_null
+      - name: image
+        description: "URL of the coin's image"
+        tests:
           - not_null
       - name: current_price
         description: "The current price of the coin"
@@ -108,6 +115,26 @@ models:
         description: "the return on investment times of the coin"
         tests:
           - not_null
+      - name: price_to_ath_ratio
+        description: "current_price / ath — helps identify how close the coin is to its all-time high"
+        tests:
+          - not_null
+      - name: market_cap_to_fdv_ratio
+        description: "market_cap / fully_diluted_valuation — indicates dilution risk"
+        tests:
+          - not_null
+      - name: circulating_supply_ratio
+        description: "circulating_supply / total_supply — shows emission rate"
+        tests:
+          - not_null
+      - name: volatility_24h
+        description: "(high_24h - low_24h) / current_price — daily price swing"
+        tests:
+          - not_null
+      - name: is_top_100
+        description: "Boolean flag based on market cap rank"
+        tests:
+          - not_null
       - name: ingestion_date
         description: "The date wherein the coin is loaded into the pipeline"
         tests:
@@ -123,31 +150,5 @@ models:
         tests:
           - not_null
           - is_timestamp
-    config:
-      materialized: table
-
-  - name: dim_coin
-    description: "Dimension table containing information on the distinguishing name, symbol and image of the coin"
-    columns:
-      - name: coin_key
-        description: "Incremental surrogate key of the coin in integer value"
-        tests:
-          - not_null
-      - name: coin_id
-        description: "The unique identifier of the coin which is a string"
-        tests:
-          - not_null
-      - name: symbol
-        description: "The symbol of the coin used among platforms"
-        tests:
-          - not_null
-      - name: name
-        description: "Full name of the coin"
-        tests:
-          - not_null
-      - name: image
-        description: "URL of the coin's image"
-        tests:
-          - not_null
     config:
       materialized: table
