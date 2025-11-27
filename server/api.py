@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from google.cloud import bigquery
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
 import os
 
@@ -8,6 +9,13 @@ load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # The path to your service account JSON is set in .env as GOOGLE_APPLICATION_CREDENTIALS
 # Example .env content: GOOGLE_APPLICATION_CREDENTIALS=api/credentials/bigquery-key.json
