@@ -21,4 +21,8 @@ data/
 spark-warehouse/
 metastore_db/
 
+#BigQuery Service Account Key
+server/credentials/*.json
+
+
 test.ipynb
