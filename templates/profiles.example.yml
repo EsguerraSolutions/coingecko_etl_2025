@@ -1,0 +1,13 @@
+crypto_etl_pipeline:
+  outputs:
+    dev:
+      dataset: warehouse
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: coingecko-etl-pipeline
+      threads: 4
+      type: bigquery
+  target: dev
