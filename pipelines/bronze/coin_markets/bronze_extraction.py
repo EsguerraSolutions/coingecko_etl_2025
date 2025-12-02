@@ -10,10 +10,7 @@ from pyspark.sql.types import *
 from pathlib import Path
 
 current_file = Path(__file__).resolve()
-
 project_root = current_file.parents[3]
-
-
 sys.path.append(str(project_root))
 
 from schema.bronze.coin_markets.column_order import bronze_df_column_order
