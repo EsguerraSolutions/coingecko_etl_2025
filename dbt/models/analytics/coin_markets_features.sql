@@ -35,4 +35,6 @@ coin_markets_features AS (
     FROM joined_coin_markets
 )
 
-SELECT * FROM coin_markets_features
+SELECT *
+FROM coin_markets_features
+ORDER BY market_cap_rank ASC

@@ -10,9 +10,16 @@ load_dotenv()
 # Initialize FastAPI app
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "https://crypto-frontend-2025-5nbfhgsnf-esguerrasolutions-projects.vercel.app"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
