@@ -3,8 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from google.cloud import bigquery
 from dotenv import load_dotenv
+from google.oauth2 import service_account
 
 import os
+import json
+import base64
 
 load_dotenv()
 
@@ -23,11 +26,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# The path to your service account JSON is set in .env as GOOGLE_APPLICATION_CREDENTIALS
-# Example .env content: GOOGLE_APPLICATION_CREDENTIALS=api/credentials/bigquery-key.json
+b64 = os.environ["GOOGLE_CREDENTIALS_B64"]
+decoded = base64.b64decode(b64)
+service_account_info = json.loads(decoded)
+credentials = service_account.Credentials.from_service_account_info(service_account_info)
+
 
 # Create BigQuery client
-client = bigquery.Client()
+client = bigquery.Client(credentials=credentials, project=credentials.project_id)
 
 ANALYTICS_DATASET_ID = os.getenv("ANALYTICS_DATASET_ID")
 ANALYTICS_TABLE_ID = os.getenv("ANALYTICS_TABLE_ID")

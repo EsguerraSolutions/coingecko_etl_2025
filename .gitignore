@@ -23,6 +23,7 @@ metastore_db/
 
 #BigQuery Service Account Key
 server/credentials/*.json
+server/credentials/*.b64
 
 
 test.ipynb
