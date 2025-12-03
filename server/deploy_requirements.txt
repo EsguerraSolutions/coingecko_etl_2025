@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+gunicorn
+
+python-dotenv
+
+google-cloud-bigquery
+google-auth
+google-auth-oauthlib
+google-cloud-core
+
+pandas
+pyarrow
