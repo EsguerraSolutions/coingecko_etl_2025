@@ -60,4 +60,3 @@ def bronze_extraction() :
 
 bronze_extraction()
 
-

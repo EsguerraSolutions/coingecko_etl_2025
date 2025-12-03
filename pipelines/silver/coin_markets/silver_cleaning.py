@@ -126,7 +126,6 @@ def silver_cleaning(bronze_to_silver_df) :
 
     silver_parquet_dir = project_root / "data" / "silver" / "coin_markets" / "parquet" / get_date_today_iso_string()
 
-    silver_df.write.mode("overwrite").parquet(str(silver_parquet_dir))
+    silver_df.coalesce(1).write.mode("overwrite").parquet(str(silver_parquet_dir))
 
 silver_cleaning(bronze_to_silver_df)
-

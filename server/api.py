@@ -10,11 +10,9 @@ load_dotenv()
 # Initialize FastAPI app
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",
-    "http://localhost:8000",
-    "https://crypto-frontend-2025-5nbfhgsnf-esguerrasolutions-projects.vercel.app"
-]
+FRONTEND_API_URL_LIST = os.getenv("FRONTEND_API_URL_LIST")
+
+origins = FRONTEND_API_URL_LIST
 
 app.add_middleware(
     CORSMiddleware,
@@ -44,6 +42,5 @@ def get_crypto_data():
     query_job = client.query(query)
     results = query_job.result()
 
-    # Convert rows to list of dicts
     rows = [dict(row) for row in results]
     return {"rows": rows}
