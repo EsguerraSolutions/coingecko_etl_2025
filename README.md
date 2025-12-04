@@ -5,12 +5,14 @@
 </p>
 
 <p align="center">
+  <a href="#-live-visualization">Live Visualization</a> •
   <a href="#-quick-start">Quick Start</a> •
-  <a href="#-features">Features</a> •
-  <a href="#%EF%B8%8F-architecture">Architecture</a> •
-  <a href="docs/">Documentation</a> •
-  <a href="ROADMAP.md">Roadmap</a> •
-  <a href="CONTRIBUTING.md">Contributing</a>
+  <a href="#-data-testing">Data Testing</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-project-structure">Project Structure</a> •
+  <a href="#-roadmap">Roadmap</a> •
+  <a href="#-acknowledgments">Acknowledgments</a> •
+  <a href="#-contact">Contact</a>
 </p>
 
 <p align="center">
@@ -66,70 +68,6 @@ _(COMING SOON)_ Additional data sources are planned to be integrated in future u
 ## ▶️ Live Visualization
 
 For a quick live demo of the visualization page integrated with the project's working API, visit the [CryptoPipe Live Visualization](https://crypto-frontend-2025.vercel.app/).
-
----
-
-## 🏛️ Architecture
-
-```
- ┌─────────────────────┐
- │                     │
- │  Source Crypto API  │
- │                     │
- └──────────┬──────────┘
- (Python)   │
-Extraction  │
-Ingestion   │
-            ▼
-       ┌─────────┐
-       │  Bronze │
-       └────┬────┘
-  (PySpark) │
-  Checking  │
-  Cleaning  │
-            ▼
-       ┌─────────┐
-       │  Silver │
-       └────┬────┘
- (BigQuery) │
- Loading    │
- ┌───────────────────────────────────────────────────────┐
- │          │               Gold                         │
- │          ▼          Data Warehouse                    │
- │     ┌─────────┐        ┌──────┐        ┌───────────┐  │
- │     │ Staging ├───────►│ Core ├───────►│ Analytics │  │
- │     └─────────┘        └───┬──┘        └───────┬───┘  │
- │                 (dbt)      │   (dbt)           │      │
- │               Modelling    │   Transformation  │      │
- │                            ▼                   │      │
- │     ┌────────────┐    ┌───────┐                │      │
- │     │ Dimensions │◄───┤ Facts │                │      │
- │     └────────────┘    └───────┘                │      │
- └───────────────────────────────────────────────────────┘
-                                                  │
-                                 Serve with API   │
-                                                  ▼
-                                            ┌─────────┐
-                                            │ FastAPI │
-                                            └─────┬───┘
-                                 API Integration  │
-                                                  ▼
-                                             ┌───────┐
-                                             │ React │
-                                             └───────┘
-```
-
-**Tech Stack:**
-
-- **Scripts:** Python
-- **Server:** FastAPI
-- **Data Warehouse:** BigQuery
-- **Cleaning:** PySpark
-- **Transformation:** dbt
-- **Frontend:** React
-- **Orchestration:** Airflow _(coming soon)_
-- **Server Deployment:** Render
-- **Frontend Deployment:** Vercel
 
 ---
 
@@ -216,14 +154,67 @@ dbt test --project-dir dbt
 
 ---
 
-## 🗺️ Roadmap
+## 🏛️ Architecture
 
-Planned future updates
+```
+ ┌─────────────────────┐
+ │                     │
+ │  Source Crypto API  │
+ │                     │
+ └──────────┬──────────┘
+ (Python)   │
+Extraction  │
+Ingestion   │
+            ▼
+       ┌─────────┐
+       │  Bronze │
+       └────┬────┘
+  (PySpark) │
+  Checking  │
+  Cleaning  │
+            ▼
+       ┌─────────┐
+       │  Silver │
+       └────┬────┘
+ (BigQuery) │
+ Loading    │
+ ┌───────────────────────────────────────────────────────┐
+ │          │               Gold                         │
+ │          ▼          Data Warehouse                    │
+ │     ┌─────────┐        ┌──────┐        ┌───────────┐  │
+ │     │ Staging ├───────►│ Core ├───────►│ Analytics │  │
+ │     └─────────┘        └───┬──┘        └───────┬───┘  │
+ │                 (dbt)      │   (dbt)           │      │
+ │               Modelling    │   Transformation  │      │
+ │                            ▼                   │      │
+ │     ┌────────────┐    ┌───────┐                │      │
+ │     │ Dimensions │◄───┤ Facts │                │      │
+ │     └────────────┘    └───────┘                │      │
+ └───────────────────────────────────────────────────────┘
+                                                  │
+                                 Serve with API   │
+                                                  ▼
+                                            ┌─────────┐
+                                            │ FastAPI │
+                                            └─────┬───┘
+                                 API Integration  │
+                                                  ▼
+                                             ┌───────┐
+                                             │ React │
+                                             └───────┘
+```
 
-- **Airflow orchestration** - Add Apache Airflow to automate, schedule, and monitor the full ETL–ELT workflow.
-- **Additional data sources** - Integrate more crypto data providers to enrich and validate market insights.
-- **Logging of bad data** - Implement data-quality checks and logging to detect and isolate malformed or inconsistent records.
-- **Error handling** - Add structured error handling to make pipeline execution more stable, predictable, and recoverable.
+**Tech Stack:**
+
+- **Scripts:** Python
+- **Server:** FastAPI
+- **Data Warehouse:** BigQuery
+- **Cleaning:** PySpark
+- **Transformation:** dbt
+- **Frontend:** React
+- **Orchestration:** Airflow _(coming soon)_
+- **Server Deployment:** Render
+- **Frontend Deployment:** Vercel
 
 ---
 
@@ -247,9 +238,14 @@ coingecko_etl_2025/
 
 ---
 
-## 📝 License
+## 🗺️ Roadmap
 
-MIT License - see [LICENSE](LICENSE) for details.
+Planned future updates
+
+- **Airflow orchestration** - Add Apache Airflow to automate, schedule, and monitor the full ETL–ELT workflow.
+- **Additional data sources** - Integrate more crypto data providers to enrich and validate market insights.
+- **Logging of bad data** - Implement data-quality checks and logging to detect and isolate malformed or inconsistent records.
+- **Error handling** - Add structured error handling to make pipeline execution more stable, predictable, and recoverable.
 
 ---
 
