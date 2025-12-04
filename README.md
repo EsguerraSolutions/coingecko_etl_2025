@@ -1,4 +1,4 @@
-# CryptoPipe - Cryptocurrency Hybrid ETL-ELT Data Pipeline
+h# CryptoPipe - Cryptocurrency Hybrid ETL-ELT Data Pipeline
 
 <p align="center">
   <strong>Production-style end-to-end hybrid ETL-ELT data pipeline with live visualization built on a cryptocurrency API</strong>
@@ -65,13 +65,13 @@ _(COMING SOON)_ Additional data sources are planned to be integrated in future u
 
 ---
 
-## ▶️ Live Visualization
+<h2 id="live-visualization"> ▶️ Live Visualization </h2>
 
 For a quick live demo of the visualization page integrated with the project's working API, visit the [CryptoPipe Live Visualization](https://crypto-frontend-2025.vercel.app/).
 
 ---
 
-## 🚀 Quick Start
+<h2 id="quick-start"> 🚀 Quick Start </h2>
 
 ### Prerequisites
 
@@ -138,7 +138,7 @@ uvicorn server.api:app --reload
 
 ---
 
-## 🔬 Data Testing
+<h2 id="data-testing"> 🔬 Data Testing </h2>
 
 Additional data validation tests are available in two different ways:
 
@@ -154,7 +154,7 @@ dbt test --project-dir dbt
 
 ---
 
-## 🏛️ Architecture
+<h2 id="architecture"> 🏛️ Architecture </h2>
 
 ```
  ┌─────────────────────┐
@@ -218,7 +218,7 @@ Ingestion   │
 
 ---
 
-## 🏗️ Project Structure
+<h2 id="project-structure"> 🏗️ Project Structure </h2>
 
 ```
 coingecko_etl_2025/
@@ -238,7 +238,7 @@ coingecko_etl_2025/
 
 ---
 
-## 🗺️ Roadmap
+<h2 id="roadmap"> 🗺️ Roadmap </h2>
 
 Planned future updates
 
@@ -249,7 +249,7 @@ Planned future updates
 
 ---
 
-## 🙏 Acknowledgments
+<h2 id="acknowledgments"> 🙏 Acknowledgments </h2>
 
 Special thanks to the tools, platforms, and learning resources that supported the development of this project:
 
@@ -264,7 +264,7 @@ Special thanks to the tools, platforms, and learning resources that supported th
 
 ---
 
-## 📩 Contact
+<h2 id="contact"> 📩 Contact </h2>
 
 - **GitHub:** [@esguerrasolutions](https://github.com/EsguerraSolutions)
 - **LinkedIn:** [Jonathan Esguerra](https://www.linkedin.com/in/esguerrasolutions/)
