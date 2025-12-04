@@ -1,4 +1,4 @@
-h# CryptoPipe - Cryptocurrency Hybrid ETL-ELT Data Pipeline
+# CryptoPipe - Cryptocurrency Hybrid ETL-ELT Data Pipeline
 
 <p align="center">
   <strong>Production-style end-to-end hybrid ETL-ELT data pipeline with live visualization built on a cryptocurrency API</strong>
