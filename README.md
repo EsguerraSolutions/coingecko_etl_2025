@@ -65,13 +65,13 @@ _(COMING SOON)_ Additional data sources are planned to be integrated in future u
 
 ---
 
-## ▶️ [Live Visualization](#live-visualization)
+## ▶️ Live Visualization
 
 For a quick live demo of the visualization page integrated with the project's working API, visit the [CryptoPipe Live Visualization](https://crypto-frontend-2025.vercel.app/).
 
 ---
 
-## 🚀 [Quick Start](#quick-start)
+## 🚀 Quick Start
 
 ### Prerequisites
 
@@ -138,7 +138,7 @@ uvicorn server.api:app --reload
 
 ---
 
-## 🔬 [Data Testing](#data-testing)
+## 🔬 Data Testing
 
 Additional data validation tests are available in two different ways:
 
@@ -154,7 +154,7 @@ dbt test --project-dir dbt
 
 ---
 
-## 🏛️ [Architecture](#architecture)
+## 🏛️ Architecture
 
 ```
  ┌─────────────────────┐
@@ -218,7 +218,7 @@ Ingestion   │
 
 ---
 
-## 🏗️ [Project Structure](#️project-structure)
+## 🏗️ Project Structure
 
 ```
 coingecko_etl_2025/
@@ -238,7 +238,7 @@ coingecko_etl_2025/
 
 ---
 
-## 🗺️ [Roadmap](#️roadmap)
+## 🗺️ Roadmap
 
 Planned future updates
 
@@ -249,7 +249,7 @@ Planned future updates
 
 ---
 
-## 🙏 [Acknowledgments](#acknowledgments)
+## 🙏 Acknowledgments
 
 Special thanks to the tools, platforms, and learning resources that supported the development of this project:
 
@@ -264,7 +264,7 @@ Special thanks to the tools, platforms, and learning resources that supported th
 
 ---
 
-## 📩 [Contact](#contact)
+## 📩 Contact
 
 - **GitHub:** [@esguerrasolutions](https://github.com/EsguerraSolutions)
 - **LinkedIn:** [Jonathan Esguerra](https://www.linkedin.com/in/esguerrasolutions/)
