@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="#live-visualization">Live Visualization</a> •
+  <a href="https://crypto-frontend-2025.vercel.app/">Live Visualization</a> •
   <a href="#quick-start">Quick Start</a> •
   <a href="#data-testing">Data Testing</a> •
   <a href="#architecture">Architecture</a> •
