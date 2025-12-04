@@ -5,14 +5,14 @@
 </p>
 
 <p align="center">
-  <a href="#-live-visualization">Live Visualization</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-data-testing">Data Testing</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-project-structure">Project Structure</a> •
-  <a href="#-roadmap">Roadmap</a> •
-  <a href="#-acknowledgments">Acknowledgments</a> •
-  <a href="#-contact">Contact</a>
+  <a href="#live-visualization">Live Visualization</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#data-testing">Data Testing</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#roadmap">Roadmap</a> •
+  <a href="#acknowledgments">Acknowledgments</a> •
+  <a href="#contact">Contact</a>
 </p>
 
 <p align="center">
@@ -65,13 +65,13 @@ _(COMING SOON)_ Additional data sources are planned to be integrated in future u
 
 ---
 
-## ▶️ Live Visualization
+## ▶️ [Live Visualization](#live-visualization)
 
 For a quick live demo of the visualization page integrated with the project's working API, visit the [CryptoPipe Live Visualization](https://crypto-frontend-2025.vercel.app/).
 
 ---
 
-## 🚀 Quick Start
+## 🚀 [Quick Start](#quick-start)
 
 ### Prerequisites
 
@@ -138,7 +138,7 @@ uvicorn server.api:app --reload
 
 ---
 
-## 🔬 Data Testing
+## 🔬 [Data Testing](#data-testing)
 
 Additional data validation tests are available in two different ways:
 
@@ -154,7 +154,7 @@ dbt test --project-dir dbt
 
 ---
 
-## 🏛️ Architecture
+## 🏛️ [Architecture](#architecture)
 
 ```
  ┌─────────────────────┐
@@ -218,7 +218,7 @@ Ingestion   │
 
 ---
 
-## 🏗️ Project Structure
+## 🏗️ [Project Structure](#️project-structure)
 
 ```
 coingecko_etl_2025/
@@ -238,7 +238,7 @@ coingecko_etl_2025/
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ [Roadmap](#️roadmap)
 
 Planned future updates
 
@@ -249,7 +249,7 @@ Planned future updates
 
 ---
 
-## 🙏 Acknowledgments
+## 🙏 [Acknowledgments](#acknowledgments)
 
 Special thanks to the tools, platforms, and learning resources that supported the development of this project:
 
@@ -264,7 +264,7 @@ Special thanks to the tools, platforms, and learning resources that supported th
 
 ---
 
-## 📩 Contact
+## 📩 [Contact](#contact)
 
 - **GitHub:** [@esguerrasolutions](https://github.com/EsguerraSolutions)
 - **LinkedIn:** [Jonathan Esguerra](https://www.linkedin.com/in/esguerrasolutions/)
