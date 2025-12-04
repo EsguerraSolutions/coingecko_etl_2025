@@ -97,7 +97,7 @@ pip install -r requirements.txt
 
 ```bash
 # Copy example env file
-cp templates/.env.example env.text
+cp templates/.env.example .env
 
 # Edit .env with following data:
 # - CoinGecko API key and URL (for data extraction)
@@ -140,13 +140,13 @@ uvicorn server.api:app --reload
 
 <h2 id="data-testing"> 🔬 Data Testing </h2>
 
-Additional data validation tests are available in two different ways:
+Additional data validation tests are available in two different options:
 
-### 1. Run the notebooks under the `checking_notebooks` directory, built using PySpark.
+### Option 1. Run the notebooks under the `checking_notebooks` directory, built using PySpark.
 
 _(COMING SOON)_ Logging of inconsistent records identified by the PySpark validation scripts.
 
-### 2. Run the dbt tests:
+### Option 2. Run the dbt tests:
 
 ```bash
 dbt test --project-dir dbt
